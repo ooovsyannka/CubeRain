@@ -13,7 +13,7 @@ public class Cube : MonoBehaviour
     private WaitForSeconds _waitForSeconds;
     private bool _isCollision;
 
-    public void SetCollisionValu()
+    public void SetCollisionValue()
     {
         _isCollision = false;
     }

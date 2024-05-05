@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
             cube.transform.position = GetrandomSpawnPosition();
             cube.SetActive(true);
             cube.GetComponent<Renderer>().material.color = Color.cyan;
+            cube.GetComponent<Cube>().SetCollisionValue();
         }
     }
 
