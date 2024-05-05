@@ -11,7 +11,6 @@ public class Cube : MonoBehaviour
     public float _liveTime;
 
     private WaitForSeconds _waitForSeconds;
-
     private bool _isCollision;
 
     public void SetCollisionValu()
@@ -56,9 +55,7 @@ public class Cube : MonoBehaviour
     {
         _waitForSeconds = new WaitForSeconds(_liveTime);
 
-
         yield return _waitForSeconds;
-
 
         gameObject.SetActive(false);
     }

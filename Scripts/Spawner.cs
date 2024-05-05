@@ -16,7 +16,6 @@ public class Spawner : MonoBehaviour
 
         if (cube != null)
         {
-            
             cube.transform.position = GetrandomSpawnPosition();
             cube.SetActive(true);
             cube.GetComponent<Renderer>().material.color = Color.cyan;

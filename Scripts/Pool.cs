@@ -8,7 +8,7 @@ public class Pool : MonoBehaviour
 
     public static Pool Instance;
 
-    private Queue<GameObject> _pools = new Queue<GameObject>();
+    private List<GameObject> _pools = new List<GameObject>();
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class Pool : MonoBehaviour
         for (int i = 0; i < _maxSize; i++)
         {
             GameObject prefab = Instantiate(_prefab);
-            _pools.Enqueue(prefab);
+            _pools.Add(prefab);
             prefab.SetActive(false);
         }
     }
