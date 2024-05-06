@@ -17,6 +17,20 @@ public class Cube : MonoBehaviour
             StartCoroutine(Coldown());
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Platform>() != null)
+        {
+            if (_isCollision == false)
+            {
+                _isCollision = true;
+                SetRandomColor();
+            }
+
+            ResetRandomLiveTime();
+        }
+    }
+ 
     public void ResetCollisionValue()
     {
         _isCollision = false;
@@ -38,20 +52,6 @@ public class Cube : MonoBehaviour
         float randomValueB = Random.Range(0.0f, maxValue);
 
         GetComponent<Renderer>().material.color = new Color(randomValueR, randomValueB, randomValueG);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<Platform>() != null)
-        {
-            if (_isCollision == false)
-            {
-                _isCollision = true;
-                SetRandomColor();
-            }
-
-            ResetRandomLiveTime();
-        }
     }
 
     private IEnumerator Coldown()
