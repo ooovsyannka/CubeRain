@@ -380,7 +380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPosition: {fileID: 897879804}
-  _delaySpawn: 0.03
+  _delaySpawn: 0.1
+  _pool: {fileID: 1124829772}
 --- !u!1 &1124829771
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5082cf7c62030fa4fba5ee60aeed5784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 4755111399810577801, guid: 090e9eecf52ea66448e3a27b23825b07, type: 3}
+  _cube: {fileID: 3386997693873326700, guid: 090e9eecf52ea66448e3a27b23825b07, type: 3}
   _maxSize: 170
 --- !u!4 &1124829773
 Transform:

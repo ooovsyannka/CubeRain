@@ -12,19 +12,19 @@ public class Pool : MonoBehaviour
     {
         for (int i = 0; i < _maxSize; i++)
         {
-            GameObject prefab = Instantiate(_cube.gameObject);
-            _pools.Add(prefab);
-            prefab.SetActive(false);
+            GameObject cube = Instantiate(_cube.gameObject);
+            _pools.Add(cube);
+            cube.SetActive(false);
         }
     }
 
     public GameObject GetPoolObject()
     {
-        foreach (GameObject prefab in _pools)
+        foreach (GameObject cube in _pools)
         {
-            if(prefab.activeInHierarchy == false)
+            if(cube.activeInHierarchy == false)
             {
-                return prefab;
+                return cube;
             }
         }
 
