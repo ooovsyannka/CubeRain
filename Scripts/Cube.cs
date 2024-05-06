@@ -26,6 +26,12 @@ public class Cube : MonoBehaviour
         _liveTime = Random.Range(minTime, maxTime);
     }
 
+    private void Update()
+    {
+        if (_isCollision)
+            StartCoroutine(Coldown());
+    }
+
     private void SetRandomColor()
     {
         float maxValue = 1.0f;
@@ -47,7 +53,6 @@ public class Cube : MonoBehaviour
             }
 
             SetRandomLiveTime();
-            StartCoroutine(Coldown());
         }
     }
 

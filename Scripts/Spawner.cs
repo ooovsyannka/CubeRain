@@ -25,8 +25,9 @@ public class Spawner : MonoBehaviour
 
     private Vector3 GetrandomSpawnPosition()
     {
-        float randomPositionX = Random.Range(0, _spawnPosition.localScale.x);
-        float randomPositionZ = Random.Range(0, _spawnPosition.localScale.z);
+        float division = 2f;
+        float randomPositionX = Random.Range(0, _spawnPosition.localScale.x / division);
+        float randomPositionZ = Random.Range(0, _spawnPosition.localScale.z / division);
         float maxHeight = 20;
         float height = _spawnPosition.position.y + maxHeight;
 
