@@ -4,6 +4,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _delaySpawn ;
+    [SerializeField] private Pool _pool ;
 
     private void Awake()
     {
@@ -12,14 +13,14 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        GameObject cube = Pool.Instance.GetPoolObject();
+        GameObject cube = _pool.GetPoolObject();
 
         if (cube != null)
         {
             cube.transform.position = GetrandomSpawnPosition();
             cube.SetActive(true);
             cube.GetComponent<Renderer>().material.color = Color.cyan;
-            cube.GetComponent<Cube>().SetCollisionValue();
+            cube.GetComponent<Cube>().ResetCollisionValue();
         }
     }
 

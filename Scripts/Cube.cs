@@ -2,9 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(Box))]
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Renderer))]
+[RequireComponent(typeof(Box),typeof(Renderer),typeof(Rigidbody))]
 
 public class Cube : MonoBehaviour
 {
@@ -13,23 +11,23 @@ public class Cube : MonoBehaviour
     private WaitForSeconds _waitForSeconds;
     private bool _isCollision;
 
-    public void SetCollisionValue()
+    private void Update()
+    {
+        if (_isCollision)
+            StartCoroutine(Coldown());
+    }
+
+    public void ResetCollisionValue()
     {
         _isCollision = false;
     }
 
-    private void SetRandomLiveTime()
+    private void ResetRandomLiveTime()
     {
         float maxTime = 6;
         float minTime = 2;
 
         _liveTime = Random.Range(minTime, maxTime);
-    }
-
-    private void Update()
-    {
-        if (_isCollision)
-            StartCoroutine(Coldown());
     }
 
     private void SetRandomColor()
@@ -52,7 +50,7 @@ public class Cube : MonoBehaviour
                 SetRandomColor();
             }
 
-            SetRandomLiveTime();
+            ResetRandomLiveTime();
         }
     }
 
